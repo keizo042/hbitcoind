@@ -14,7 +14,7 @@ cabal-version:       >=1.10
 
 Library
   default-Language:    Haskell2010
-  ghc-option:          -Wall
+  ghc-options:          -Wall
   exposed-modules:     Program.HBitCoin
                        Program.HBitCoin.NetWork
                        Program.HbitCoin.Utils
@@ -24,11 +24,14 @@ executable hbitcoind
   hs-source-dirs:      src
   main-is:             HbitCoind.hs
   default-language:    Haskell2010
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       base >= 4.7 && < 5,
+                       hdaemonize >= 0.5.2,
+                       optparse-generic >= 1.1.1,
+                       optparse-applicative >= 0.12.1.0
 
 executable hbitcoinctl
-  hs-source-dirs:
-  hs-source-dirs:      src
+  hs-source-dirs:      utils
   main-is:             hbitcoinctl.hs
-  default-language:    Haskell2010
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       base >= 4.7 && < 5,
+                       optparse-generic >= 1.1.1,
+                       optparse-applicative >= 0.12.1.0
