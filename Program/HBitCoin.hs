@@ -1,0 +1,5 @@
+module Program.HBitCoin
+  (
+  )
+  where
+
