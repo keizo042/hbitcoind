@@ -18,7 +18,11 @@ Library
   exposed-modules:     Program.HBitCoin
                        Program.HBitCoin.NetWork
                        Program.HbitCoin.Utils
-  build-depends:       base >= 4.7 && < 5
+  build-depends:       base >= 4.7 && < 5,
+                       cryptonite,
+                       hdaemonize >= 0.5.2,
+                       optparse-generic >= 1.1.1,
+                       optparse-applicative >= 0.12.1.0
 
 executable hbitcoind
   hs-source-dirs:      src
