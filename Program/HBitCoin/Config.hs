@@ -14,13 +14,18 @@ data Config = Config {
   opt :: Opt,
   daemon :: D.CreateDaemon }
 
-data Opt = Opt
+data Opt = Opt 
+         {
+           s :: Maybe String
+           switch :: Maybe String
+           f :: FilePath
+         }
 
 setup :: IO Config
 setup = optparse daemon
 
 optparse :: D.CreateDaemon -> IO Config
-optparse d = undefined
+optparse d = execParser undefined
 
 daemon :: D.CreateDaemon
 daemon = D.CreateDaemon {
